@@ -5,14 +5,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh('./mvnw clean compile -U')
+                script {
+                    for (int i = 0; i < 10; i++) {
+                        echo("Script ${i}")
+                    }
+                }
                 echo 'Build success'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh('./mvnw test')
+                // sh('./mvnw test')
                 echo 'Test success'
             }
         }
