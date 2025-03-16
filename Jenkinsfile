@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh('./mvnw clean compile test-compile')
+                sh('./mvnw clean compile -U')
                 echo 'Build success'
             }
         }
